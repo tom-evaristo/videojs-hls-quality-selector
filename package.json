@@ -68,8 +68,8 @@
   "dependencies": {
     "global": "^4.3.2",
     "karma-safaritechpreview-launcher": "0.0.6",
-    "video.js": "^7.5.5",
-    "videojs-contrib-quality-levels": "^2.0.9"
+    "video.js": "^8.3.0",
+    "videojs-contrib-quality-levels": "^4.0.0"
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",

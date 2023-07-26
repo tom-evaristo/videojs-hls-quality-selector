@@ -1,6 +1,6 @@
 import videojs from 'video.js';
 
-const VideoJsButtonClass = videojs.getComponent('MenuButton');
+const VjsMenuBtn = videojs.getComponent('MenuButton');
 const VideoJsMenuClass = videojs.getComponent('Menu');
 const VideoJsComponent = videojs.getComponent('Component');
 const Dom = videojs.dom;
@@ -22,7 +22,7 @@ function toTitleCase(string) {
 /**
  * Extend vjs button class for quality button.
  */
-export default class ConcreteButton extends VideoJsButtonClass {
+export default class ConcreteButton{
 
     /**
      * Button constructor.
@@ -30,7 +30,7 @@ export default class ConcreteButton extends VideoJsButtonClass {
      * @param {Player} player - videojs player instance
      */
   constructor(player) {
-    super(player, {
+    return new VjsMenuBtn(player, {
       title: player.localize('Quality'),
       name: 'QualityButton'
     });

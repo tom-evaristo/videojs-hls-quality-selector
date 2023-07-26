@@ -6,7 +6,7 @@ const VideoJsMenuItemClass = videojs.getComponent('MenuItem');
 /**
  * Extend vjs menu item class.
  */
-export default class ConcreteMenuItem extends VideoJsMenuItemClass {
+export default class ConcreteMenuItem {
 
     /**
      * Menu item constructor.
@@ -17,14 +17,15 @@ export default class ConcreteMenuItem extends VideoJsMenuItemClass {
      * @param {HlsQualitySelectorPlugin} plugin - This plugin instance.
      */
   constructor(player, item, qualityButton, plugin) {
-    super(player, {
+    this.item = item;
+    this.qualityButton = qualityButton;
+    this.plugin = plugin;
+
+    return new VideoJsMenuItemClass(player, {
       label: item.label,
       selectable: true,
       selected: item.selected || false
     });
-    this.item = item;
-    this.qualityButton = qualityButton;
-    this.plugin = plugin;
   }
 
     /**

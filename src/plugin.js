@@ -40,7 +40,7 @@ class HlsQualitySelectorPlugin {
    * @return {*} - videojs-hls-contrib plugin.
    */
   getHls() {
-    return this.player.tech({ IWillNotUseThisInPlugins: true }).hls;
+    return this.player.tech().vhs;
   }
 
   /**
@@ -106,6 +106,7 @@ class HlsQualitySelectorPlugin {
 
     const player = this.player;
     const qualityList = player.qualityLevels();
+
     const levels = qualityList.levels_ || [];
     const levelItems = [];
 
@@ -133,12 +134,12 @@ class HlsQualitySelectorPlugin {
       if ((typeof current !== 'object') || (typeof next !== 'object')) {
         return -1;
       }
-      if (current.item.value < next.item.value) {
-        return -1;
-      }
-      if (current.item.value > next.item.value) {
-        return 1;
-      }
+      // if (current.item.value < next.item.value) {
+      //   return -1;
+      // }
+      // if (current.item.value > next.item.value) {
+      //   return 1;
+      // }
       return 0;
     });
 
